@@ -15,7 +15,7 @@ import (
 )
 
 func TestCreateCommand(t *testing.T) {
-	th := Setup().InitBasic().InitSystemAdmin()
+	th := Setup(t).InitBasic().InitSystemAdmin()
 	defer th.TearDown()
 	Client := th.Client
 
@@ -64,7 +64,7 @@ func TestCreateCommand(t *testing.T) {
 }
 
 func TestUpdateCommand(t *testing.T) {
-	th := Setup().InitBasic().InitSystemAdmin()
+	th := Setup(t).InitBasic().InitSystemAdmin()
 	defer th.TearDown()
 	Client := th.SystemAdminClient
 	user := th.SystemAdminUser
@@ -150,7 +150,7 @@ func TestUpdateCommand(t *testing.T) {
 }
 
 func TestDeleteCommand(t *testing.T) {
-	th := Setup().InitBasic().InitSystemAdmin()
+	th := Setup(t).InitBasic().InitSystemAdmin()
 	defer th.TearDown()
 	Client := th.SystemAdminClient
 	user := th.SystemAdminUser
@@ -213,7 +213,7 @@ func TestDeleteCommand(t *testing.T) {
 }
 
 func TestListCommands(t *testing.T) {
-	th := Setup().InitBasic().InitSystemAdmin()
+	th := Setup(t).InitBasic().InitSystemAdmin()
 	defer th.TearDown()
 	Client := th.Client
 
@@ -301,7 +301,7 @@ func TestListCommands(t *testing.T) {
 }
 
 func TestListAutocompleteCommands(t *testing.T) {
-	th := Setup().InitBasic().InitSystemAdmin()
+	th := Setup(t).InitBasic().InitSystemAdmin()
 	defer th.TearDown()
 	Client := th.Client
 
@@ -361,7 +361,7 @@ func TestListAutocompleteCommands(t *testing.T) {
 }
 
 func TestRegenToken(t *testing.T) {
-	th := Setup().InitBasic().InitSystemAdmin()
+	th := Setup(t).InitBasic().InitSystemAdmin()
 	defer th.TearDown()
 	Client := th.Client
 
@@ -396,7 +396,7 @@ func TestRegenToken(t *testing.T) {
 }
 
 func TestExecuteInvalidCommand(t *testing.T) {
-	th := Setup().InitBasic().InitSystemAdmin()
+	th := Setup(t).InitBasic().InitSystemAdmin()
 	defer th.TearDown()
 	Client := th.Client
 	channel := th.BasicChannel
@@ -459,7 +459,7 @@ func TestExecuteInvalidCommand(t *testing.T) {
 }
 
 func TestExecuteGetCommand(t *testing.T) {
-	th := Setup().InitBasic().InitSystemAdmin()
+	th := Setup(t).InitBasic().InitSystemAdmin()
 	defer th.TearDown()
 	Client := th.Client
 	channel := th.BasicChannel
@@ -519,7 +519,7 @@ func TestExecuteGetCommand(t *testing.T) {
 }
 
 func TestExecutePostCommand(t *testing.T) {
-	th := Setup().InitBasic().InitSystemAdmin()
+	th := Setup(t).InitBasic().InitSystemAdmin()
 	defer th.TearDown()
 	Client := th.Client
 	channel := th.BasicChannel
@@ -578,7 +578,7 @@ func TestExecutePostCommand(t *testing.T) {
 }
 
 func TestExecuteCommandAgainstChannelOnAnotherTeam(t *testing.T) {
-	th := Setup().InitBasic()
+	th := Setup(t).InitBasic()
 	defer th.TearDown()
 	Client := th.Client
 	channel := th.BasicChannel
@@ -629,7 +629,7 @@ func TestExecuteCommandAgainstChannelOnAnotherTeam(t *testing.T) {
 }
 
 func TestExecuteCommandAgainstChannelUserIsNotIn(t *testing.T) {
-	th := Setup().InitBasic()
+	th := Setup(t).InitBasic()
 	defer th.TearDown()
 	client := th.Client
 
@@ -684,7 +684,7 @@ func TestExecuteCommandAgainstChannelUserIsNotIn(t *testing.T) {
 }
 
 func TestExecuteCommandInDirectMessageChannel(t *testing.T) {
-	th := Setup().InitBasic()
+	th := Setup(t).InitBasic()
 	defer th.TearDown()
 	client := th.Client
 
@@ -744,7 +744,7 @@ func TestExecuteCommandInDirectMessageChannel(t *testing.T) {
 }
 
 func TestExecuteCommandInTeamUserIsNotOn(t *testing.T) {
-	th := Setup().InitBasic()
+	th := Setup(t).InitBasic()
 	defer th.TearDown()
 	client := th.Client
 
